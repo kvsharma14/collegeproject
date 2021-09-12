@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap");
+
+.team {
+  margin: 75px 20px;
+  margin-left: 100px;
+}
+
+.custom-underline {
+  position: relative;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #062363;
+  padding-bottom: 0px;
+  font-size: 80px;
+  font-family: "Cormorant Garamond", serif;
+}
+
+.custom-underline,
+.custom-underline:hover,
+.custom-underline:focus,
+.custom-underline:active {
+  color: #062363;
+  text-decoration: none;
+}
+
+.custom-underline::after {
+  content: "";
+  position: absolute;
+}
+
+.box-c .custom-underline::after {
+  top: 85%;
+  height: 3px !important;
+  width: 20%;
+  left: 40%;
+  background-color: #b1422f;
+  transition: 0.4s ease-out all 0.1s;
+}
+
+.box-c:hover .custom-underline::after {
+  width: 45%;
+  left: 27%;
+  transition: 0.5s ease all;
+}
+
+@media screen and (max-width: 480px) {
+  .team {
+    margin-top: 250px;
+    margin-left: 0px;
+  }
+
+  .custom-underline {
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding-bottom: 0px;
+    font-size: 40px;
+    margin-left: 0px;
+  }
+
+  .box-c .custom-underline::after {
+    width: 20%;
+    left: 39%;
+  }
+
+  .box-c:hover .custom-underline::after {
+    width: 65%;
+    left: 20%;
+  }
+}

@@ -1,0 +1,155 @@
+.NavbarItems {
+  background: linear-gradient(
+    90deg,
+    rgba(110, 94, 254) 0%,
+    rgba(73, 63, 252, 1) 100%
+  );
+  height: 80px;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.navbar-logo {
+  color: #fff;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.nav-menu {
+  list-style: none;
+  text-align: center;
+  width: 100vw;
+  margin-right: 2rem;
+}
+
+.nav-links {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+}
+
+.nav-links.active,
+.nav-links:hover {
+  background-color: #cfcfda;
+  border-radius: 4px;
+  transition: 0.5s;
+}
+
+.checkbtn {
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+#check {
+  display: none;
+}
+
+.menu ul li {
+  list-style: none;
+  position: relative;
+}
+
+.menu ul ul {
+  position: absolute;
+}
+
+.menu ul li:hover ul {
+  display: block;
+}
+
+.menu a:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 2px;
+}
+
+.fa {
+  color: #fff;
+}
+
+.h11 {
+  margin-top: 4px;
+  background-color: #fff;
+  width: 15rem;
+  height: 14rem;
+  text-align: left;
+}
+
+.menu ul ul li {
+  margin: 6px;
+  margin-left: -20px;
+}
+
+@media (min-width: 952px) {
+  .nav-menu {
+    display: flex;
+    margin-left: 600px;
+  }
+  .menu ul ul {
+    display: none;
+  }
+  .menu ul ul li a {
+    color: #6c5ce7;
+  }
+}
+
+@media (max-width: 952px) {
+  .navbar-logo {
+    font-size: 30px;
+    padding-left: 50px;
+  }
+}
+
+@media (max-width: 858px) {
+  .checkbtn {
+    display: block;
+    margin-left: 10px;
+  }
+
+  .NavbarItems {
+    position: relative;
+  }
+
+  nav ul {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background: #2c3e50;
+    top: 315%;
+    left: -150%;
+    margin-left: -400px;
+    text-align: center;
+    transition: all 0.5s;
+  }
+
+  .menu ul {
+    left: -100%;
+  }
+
+  .menu ul li {
+    left: 235%;
+    margin-top: -20px;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .menu ul ul {
+    position: relative;
+    left: 100%;
+    text-align: left;
+    margin-left: -750px;
+  }
+
+  #check:checked ~ ul {
+    left: 0;
+  }
+}

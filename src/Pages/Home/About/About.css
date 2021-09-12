@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
+
+.about-box {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  background-color: #b8b8ee;
+  border-radius: 8px;
+  margin: 15px;
+  margin-bottom: 75px;
+}
+
+.about-right {
+  margin-left: 15px;
+  margin-top: 50px;
+  max-width: 50%;
+  padding-right: 0px;
+}
+
+.about-p {
+  font-family: "Roboto Mono", monospace;
+  font-size: 55px;
+  align-content: center;
+  color: rgb(11, 3, 92);
+  text-align: center;
+}
+
+.about-p2 {
+  font-family: "PT Sans", sans-serif;
+  font-size: 30px;
+  align-content: center;
+  color: rgb(4, 1, 39);
+  text-align: center;
+}
+
+.about-left {
+  margin-right: 10px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+
+.about-img {
+  height: 39rem;
+  width: 45rem;
+  margin-left: 50px;
+}
+
+@media screen and (max-width: 480px) {
+  .about-box {
+    display: flex;
+    flex-direction: column;
+  }
+  .about-right {
+    max-width: 100%;
+  }
+
+  .about-p {
+    font-size: 30px;
+  }
+
+  .about-p2 {
+    font-size: 20px;
+  }
+
+  .about-img {
+    height: 19rem;
+    width: 30rem;
+    margin-left: 20px;
+  }
+}

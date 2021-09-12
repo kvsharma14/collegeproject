@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap");
+
+.heading_style {
+  display: block;
+  text-align: center;
+  font-weight: 550;
+  letter-spacing: 2px;
+  color: #062363;
+  font-size: 75px;
+  font-family: "Cormorant Garamond", serif;
+  margin-bottom: 25px;
+  margin-top: 35px;
+}
+
+.cards {
+  margin: 1%;
+  background-color: rgb(103, 135, 241);
+  width: 20%;
+  margin-left: 3rem;
+  border-radius: 12px;
+  margin-bottom: 55px;
+  margin-top: 35px;
+}
+
+.card_img {
+  width: 60%;
+  height: 130px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  margin-left: 50px;
+}
+
+.card_info {
+  background-color: #fff;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  padding: 16px 24px 24px 24px;
+  margin-left: 28px;
+}
+
+.card_category {
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  color: #721d51;
+  background-color: #fff;
+}
+
+.card_title {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-family: "Quicksand", sans-serif;
+  background-color: #fff;
+  color: #595681;
+  font-size: 24px;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.card_title_id {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-family: "Quicksand", sans-serif;
+  background-color: #fff;
+  color: #595681;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+.card-btn {
+  padding: 5px 8px;
+  margin-top: 3px;
+  margin-right: 14px;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 2px;
+  font-weight: 500;
+  color: #332c72;
+  border-radius: 4px;
+  background-color: #fff;
+  outline: none;
+  border: 2px solid rgb(26, 8, 107);
+  cursor: pointer;
+}
+
+.card-btn:hover {
+  background-color: #afb4e9;
+}
+
+@media screen and (max-width: 480px) {
+  .cards {
+    float: none;
+    width: 80%;
+    margin-left: 40px;
+    margin-right: 20px;
+    height: 30%;
+  }
+
+  .card {
+    position: inherit;
+  }
+}

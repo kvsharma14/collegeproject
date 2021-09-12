@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Acme&display=swap");
+
+.signin_back {
+  width: 100%;
+  min-width: 1000px;
+  height: 750px;
+  overflow: hidden;
+  background-image: url(https://wppenergy.io/wp-content/uploads/2018/10/light-bg_NCP.jpg);
+}
+
+.signin_header {
+  font-size: 60px;
+  font-family: "Acme", sans-serif;
+  margin-top: -130px;
+  margin-left: 27rem;
+  color: #20367e;
+}
+
+.signin_base-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 19px 210px 480px 194px;
+  position: center;
+  align-items: flex-end;
+  width: auto;
+  height: 150px;
+}
+
+.signin_content {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  border: 7px solid #20367e;
+  padding: 9px;
+  border-radius: 8px;
+  transition: all 250ms ease-in-out;
+  cursor: default;
+  box-shadow: 5px 5px 12px 0.8px #29526d96;
+  height: 700px;
+  width: 1000px;
+}
+
+.signin_form {
+  margin-top: 2rem;
+  margin-left: 25px;
+  flex-direction: column;
+  padding-right: 400px;
+}
+
+.signin_right_form {
+  margin-top: -25.3rem;
+  flex-direction: column;
+  margin-bottom: -2rem;
+  padding-left: 500px;
+}
+
+.signin_image {
+  width: auto;
+  flex-direction: column;
+  max-width: 200px;
+  height: auto;
+  margin-left: 116px;
+  margin-top: -5px;
+}
+
+.signin_form-control {
+  margin-top: 0px;
+  min-width: 26rem;
+  height: 30px;
+  padding: 0 10px;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  background-color: #9a9fd4;
+  border: 0;
+  border-radius: 4px;
+  margin-bottom: 27px;
+  transition: all 250ms ease-in-out;
+  cursor: default;
+}
+
+.signin_right_form-control {
+  margin-top: 0px;
+  min-width: 26rem;
+  height: 30px;
+  padding: 0px 10px;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  background-color: #9a9fd4;
+  border: 0;
+  border-radius: 4px;
+  margin-bottom: 27px;
+  transition: all 250ms ease-in-out;
+  cursor: default;
+}
+
+.signin_form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: fit-content;
+  margin-bottom: -0.75rem;
+  cursor: default;
+}
+.signin_right_form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: fit-content;
+  margin-bottom: -0.75rem;
+}
+
+.signin_label {
+  font-size: 15px;
+}
+.signin_footer {
+  margin-top: 0.7rem;
+}
+
+.signin_btn {
+  font-size: 18px;
+  padding: 0px 20px;
+  border: 3px solid #20367e;
+  background-color: #9ca1ce;
+  color: rgb(24, 21, 21);
+  hover: #000000;
+  border-radius: 5px;
+  transition: all 250ms ease-in-out;
+  cursor: pointer;
+  margin-right: 2 rem;
+  margin-top: 3rem;
+  margin-left: 25rem;
+}
+
+.signin_btn:hover {
+  background-color: #9ca1ce;
+}
+.signin_btn:focus {
+  outline: #421d42;
+}
+
+.signin_forgot-password {
+  margin-left: 23rem;
+}

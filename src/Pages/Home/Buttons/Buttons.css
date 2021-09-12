@@ -1,0 +1,66 @@
+.Buttons-home {
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 55px;
+}
+
+.btn-home {
+  width: 450px;
+  height: 150px;
+  background: none;
+  border: 5px solid #2682be;
+  border-radius: 8px;
+  color: #16326e;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 25px;
+  position: relative;
+  margin: 100px;
+}
+
+.btn-home::before,
+.btn-home::after {
+  background: none;
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 3.5px;
+  background: #16326e;
+  transform: skewX(50deg);
+  transition: 0.4s linear;
+}
+
+.btn-home::before {
+  top: -4px;
+  left: 10%;
+}
+
+.btn-home::after {
+  bottom: -4px;
+  right: 10%;
+}
+
+.btn-home:hover::before {
+  left: 80%;
+}
+
+.btn-home:hover::after {
+  right: 80%;
+}
+
+@media screen and (max-width: 480px) {
+  .Buttons-home {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .btn-home {
+    width: 300px;
+    height: 500px;
+    padding: 20px;
+    margin-bottom: -50px;
+  }
+}
