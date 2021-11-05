@@ -3,14 +3,14 @@ import { Routes, Route } from "react-router-dom";
 import { PrivateRoute } from "./PrivateRoute/PrivateRoute";
 import { Accordian, AcceptDecline, Achievements, Profile, Error404, UploadDocument, 
   Bookmark, ViewDocument, Login, Signin, Notification, AskQuery, Home } from "./Pages";
-import { firebaseConfig } from './firebase.config'
-import { initializeApp } from "firebase/app";
+// import { firebaseConfig } from './firebase.config'
+// import { initializeApp } from "firebase/app";
 import { useEffect } from "react";
 
 export default function App() {
 
   useEffect(()=>{
-    const app = initializeApp(firebaseConfig);
+    // const app = initializeApp(firebaseConfig);
   }, [])
 
   return (
