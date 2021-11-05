@@ -1,12 +1,13 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import logo_blue from "../../image/logo_blue.png";
 import loginp from "../../image/loginp.png";
-import { useNavigate } from "react-router-dom";
-import "./Login.css";
-import axios from "axios";
+import { useData } from "../../Contexts/data-context";
 import { useSnackbar } from "react-simple-snackbar";
 import { error, success } from "../../utils/snackbar";
-import { useData } from "../../Contexts/data-context";
+import { URL } from '../../utils/api'
+import "./Login.css";
 
 export function Login() {
   const { dataState, dataDispatch } = useData();
@@ -20,14 +21,8 @@ export function Login() {
 
   const login = async (credentials) => {
     try {
-      const {
-        data
-      } = await axios.post(
-        "https://DocDotDeck.kvsharma1406.repl.co/emp/login",
-        { empId: credentials.empId, password: credentials.password }
-      );
+      const { data } = await axios.post(URL, { empId: credentials.empId, password: credentials.password });
       dataDispatch({ type: "USER-LOGGED-IN", payload: data.success });
-      console.log(data);
       openSuccessSnackbar("Successfully logged in", 2000);
       navigate("/");
     } catch (e) {

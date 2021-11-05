@@ -2,11 +2,10 @@ import "./UploadDocument.css";
 import { Nav, Footer } from "../../Component";
 import React, { useState } from "react";
 import { useEffect } from "react";
-// Import the main component
-import { Viewer } from "@react-pdf-viewer/core"; // install this library
-// Plugins
-import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout"; // install this library
-// Import the styles
+import { Viewer } from "@react-pdf-viewer/core";
+import { firebaseConfig } from "../../firebase.config"
+import firebase from 'firebase';
+import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
 import "@react-pdf-viewer/core/lib/styles/index.css";
 import "@react-pdf-viewer/default-layout/lib/styles/index.css";
 
@@ -55,6 +54,16 @@ export function UploadDocument() {
     }
   };
 
+  const handleUploadDocument = async () => {
+    console.log({ viewPdf })
+    // const app = initializeApp(firebaseConfig)
+    // const storageRef = firebase.storage().ref();
+    // const fileRef = storageRef.child("qwerty");
+    // await fileRef.put(viewPdf)
+    // const docUrl = await fileRef.getDownloadURL()
+    // console.log({ docUrl })
+  }
+
   useEffect(() => {
     window.scroll({ top: 0, left: 0, behavior: "smooth" });
   }, []);
@@ -102,7 +111,7 @@ export function UploadDocument() {
             placeholder="Post any Comments regarding your document"
           ></textarea>
         </div>
-        <button type="submit" className="btn btn-success btn-lg btn-upload">
+        <button type="button" onClick={()=>{handleUploadDocument()}} className="btn btn-success btn-lg btn-upload">
           UPLOAD
         </button>
       </div>
