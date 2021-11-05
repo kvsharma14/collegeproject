@@ -1,10 +1,7 @@
 import "./styles.css";
-import { Nav, Footer } from "./Component";
 import { Routes, Route } from "react-router-dom";
+import { PrivateRoute } from "./PrivateRoute/PrivateRoute";
 import {
-  About,
-  Buttons,
-  TeamMember,
   Accordian,
   AcceptDecline,
   Achievements,
@@ -16,39 +13,28 @@ import {
   Login,
   Signin,
   Notification,
-  AskQuery
+  AskQuery,
+  Home
 } from "./Pages";
 
 export default function App() {
   return (
     <div className="App">
-      {/* <Login /> */}
-      {/* <Signin /> */}
-      <Nav />
-
       <Routes>
+        <Route path="/login" element={<Login />} />
         <Route path="/signin" element={<Signin />} />
-        <Route
-          path="/"
-          element={
-            <>
-              {" "}
-              <About /> <Buttons /> <TeamMember />{" "}
-            </>
-          }
-        />
-        <Route path="/FAQ" element={<Accordian />} />
-        <Route path="/Achievement" element={<Achievements />} />
-        <Route path="/Bookmark" element={<Bookmark />} />
-        <Route path="/Profile" element={<Profile />} />
-        <Route path="/Request" element={<AcceptDecline />} />
-        <Route path="/uploadDocument" element={<UploadDocument />} />
-        <Route path="/viewDocument" element={<ViewDocument />} />
-        <Route path="/askQuery" element={<AskQuery />} />
-        <Route path="/Notification" element={<Notification />} />
         <Route path="*" element={<Error404 />} />
+        <PrivateRoute path="/index" element={<Home />} />
+        <PrivateRoute path="/faq" element={<Accordian />} />
+        <PrivateRoute path="/achievement" element={<Achievements />} />
+        <PrivateRoute path="/bookmark" element={<Bookmark />} />
+        <PrivateRoute path="/profile" element={<Profile />} />
+        <PrivateRoute path="/request" element={<AcceptDecline />} />
+        <PrivateRoute path="/uploaddocument" element={<UploadDocument />} />
+        <PrivateRoute path="/viewdocument" element={<ViewDocument />} />
+        <PrivateRoute path="/askquery" element={<AskQuery />} />
+        <PrivateRoute path="/notification" element={<Notification />} />
       </Routes>
-      <Footer />
     </div>
   );
 }

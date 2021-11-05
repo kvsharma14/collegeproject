@@ -1,26 +1,52 @@
 import React, { useState } from "react";
 import logo_blue from "../../image/logo_blue.png";
 import loginp from "../../image/loginp.png";
-
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
+import axios from "axios";
+import { useSnackbar } from "react-simple-snackbar";
+import { error, success } from "../../utils/snackbar";
+import { useData } from "../../Contexts/data-context";
 
 export function Login() {
-  const [modal, setModal] = useState(false);
+  const { dataState, dataDispatch } = useData();
+  const [openSnackbar] = useSnackbar(error);
+  const [openSuccessSnackbar] = useSnackbar(success);
+  const navigate = useNavigate();
+  const [credentials, setCredentials] = useState({
+    empId: "",
+    password: ""
+  });
 
-  const toggleModal = () => {
-    setModal(!modal);
+  const login = async (credentials) => {
+    try {
+      const {
+        data
+      } = await axios.post(
+        "https://DocDotDeck.kvsharma1406.repl.co/emp/login",
+        { empId: credentials.empId, password: credentials.password }
+      );
+      dataDispatch({ type: "USER-LOGGED-IN", payload: data.success });
+      console.log(data);
+      openSuccessSnackbar("Successfully logged in", 2000);
+      navigate("/index");
+    } catch (e) {
+      if (e.response.status === 401) {
+        return openSnackbar("Wrong ID or Password.", 2000);
+      } else if (e.response.status === 404) {
+        return openSnackbar("Check Username and Password and try again.", 2000);
+      } else {
+        return openSnackbar(e.message, 2000);
+      }
+    }
   };
 
-  if (modal) {
-    document.body.classList.add("active-modal");
-  } else {
-    document.body.classList.remove("active-modal");
-  }
-
-  const navigate = useNavigate();
-  function loginHandler() {
-    navigate("/");
+  function loginHandler(data) {
+    if (data.empId === "" || data.password === "") {
+      return openSnackbar("Emp ID or Password cannot be empty.", 2000);
+    } else {
+      login(data);
+    }
   }
 
   return (
@@ -32,87 +58,55 @@ export function Login() {
               <img src={loginp} alt="Logo" className="image" />
             </div>
             <hr />
-
             <div className="login_form">
               <div className="login_form-group">
                 <label className="login_label" htmlFor="username">
-                  {" "}
-                  USERNAME{" "}
+                  EMP ID
                 </label>
                 <input
                   className="login_input"
                   type="text"
-                  name="Username"
-                  placeholder="Enter your username"
+                  name="Emp Id"
+                  placeholder="Enter your emp id"
+                  required
+                  onChange={(e) => {
+                    setCredentials({ ...credentials, empId: e.target.value });
+                  }}
                 />
               </div>
               <div className="login_form-group">
                 <label className="login_label" htmlFor="password">
-                  {" "}
-                  PASSWORD{" "}
+                  PASSWORD
                 </label>
                 <input
                   className="login_input"
                   type="password"
                   name="Password"
                   placeholder="Enter your password"
+                  required
+                  onChange={(e) => {
+                    setCredentials({
+                      ...credentials,
+                      password: e.target.value
+                    });
+                  }}
                 />
               </div>
               <div className="login_footer">
                 <button
                   type="button"
                   className="login_btn"
-                  onClick={() => loginHandler()}
+                  onClick={() => loginHandler(credentials)}
                 >
                   Login
                 </button>
               </div>
-              <div className="login_forgotpassword">
-                <a href=" ">Forgot Password? </a>
-              </div>
-              <div className="login_newuser">
-                <a href=" ">Are you a New User? Sign In </a>
-              </div>
-
-              <div className="login_newproject">
-                <button onClick={toggleModal} className="login-btn-np">
-                  New Project
-                </button>
-
-                {modal && (
-                  <div className="moddal">
-                    <div onClick={toggleModal} className="overlayy"></div>
-                    <div className="modal-content login_newproject">
-                      <h2 className="modal-heading">Change Password</h2>
-
-                      <input
-                        type="password"
-                        className="profile-input"
-                        placeholder="Enter Old Password"
-                      />
-                      <br />
-                      <input
-                        type="password"
-                        className="profile-input"
-                        placeholder="Enter New Password"
-                      />
-                      <button className="pop-btn-modal">Save</button>
-                      <button
-                        className="pop-btn-modal pop-close"
-                        onClick={toggleModal}
-                      >
-                        CLOSE
-                      </button>
-                    </div>
-                  </div>
-                )}
-              </div>
             </div>
           </div>
         </div>
-        <div className="company">
-          <img src={logo_blue} alt="Logo" className="imagebg" />
-        </div>
+      </div>
+      <div className="company">
+        <img src={logo_blue} alt="Logo" className="imagebg" />
       </div>
     </>
   );

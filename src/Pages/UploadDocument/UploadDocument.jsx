@@ -1,5 +1,5 @@
 import "./UploadDocument.css";
-
+import { Nav, Footer } from "../../Component";
 import React, { useState } from "react";
 import { useEffect } from "react";
 // Import the main component
@@ -60,49 +60,53 @@ export function UploadDocument() {
   }, []);
 
   return (
-    <div className="container">
-      <br></br>
-      <h1 className="h1-upload">Upload your document</h1>
-      <form className="form-group" onSubmit={handlePdfFileSubmit}>
-        <input
-          type="file"
-          className="form-control"
-          required
-          onChange={handlePdfFileChange}
-        />
-        {pdfFileError && <div className="error-msg">{pdfFileError}</div>}
+    <>
+      <Nav />
+      <div className="container">
         <br></br>
-        <button type="submit" className="btn-preview btn btn-success btn-lg">
-          PREVIEW
-        </button>
-      </form>
-      <br></br>
-      <h4>View PDF</h4>
-      <div className="pdf-container">
-        {/* show pdf conditionally (if we have one)  */}
-        {viewPdf && (
-          <>
-            <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.6.347/build/pdf.worker.min.js">
-              <Viewer
-                fileUrl={viewPdf}
-                plugins={[defaultLayoutPluginInstance]}
-              />
-            </Worker>
-          </>
-        )}
+        <h1 className="h1-upload">Upload your document</h1>
+        <form className="form-group" onSubmit={handlePdfFileSubmit}>
+          <input
+            type="file"
+            className="form-control"
+            required
+            onChange={handlePdfFileChange}
+          />
+          {pdfFileError && <div className="error-msg">{pdfFileError}</div>}
+          <br></br>
+          <button type="submit" className="btn-preview btn btn-success btn-lg">
+            PREVIEW
+          </button>
+        </form>
+        <br></br>
+        <h4>View PDF</h4>
+        <div className="pdf-container">
+          {/* show pdf conditionally (if we have one)  */}
+          {viewPdf && (
+            <>
+              <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.6.347/build/pdf.worker.min.js">
+                <Viewer
+                  fileUrl={viewPdf}
+                  plugins={[defaultLayoutPluginInstance]}
+                />
+              </Worker>
+            </>
+          )}
 
-        {/* if we dont have pdf or viewPdf state is null */}
-        {!viewPdf && <>No pdf file selected</>}
+          {/* if we dont have pdf or viewPdf state is null */}
+          {!viewPdf && <>No pdf file selected</>}
+        </div>
+        <div className="upload-comment">
+          <textarea
+            className="upload-textarea"
+            placeholder="Post any Comments regarding your document"
+          ></textarea>
+        </div>
+        <button type="submit" className="btn btn-success btn-lg btn-upload">
+          UPLOAD
+        </button>
       </div>
-      <div className="upload-comment">
-        <textarea
-          className="upload-textarea"
-          placeholder="Post any Comments regarding your document"
-        ></textarea>
-      </div>
-      <button type="submit" className="btn btn-success btn-lg btn-upload">
-        UPLOAD
-      </button>
-    </div>
+      <Footer />
+    </>
   );
 }

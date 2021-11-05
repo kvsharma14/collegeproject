@@ -27,6 +27,7 @@
 
 .td {
   background-color: rgb(176, 177, 192);
+  padding-left: 25px;
 }
 .list-btn {
   height: 39px;
@@ -59,6 +60,15 @@
   text-align: center;
 }
 
+.blackButton {
+  background-color: black;
+  color: white;
+}
+
+.whiteButton {
+  background-color: white;
+  color: black;
+}
 @media screen and (max-width: 480px) {
   .view-star {
     margin-left: 110px;
