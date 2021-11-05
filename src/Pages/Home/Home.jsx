@@ -1,14 +1,14 @@
-import "./AskQuery.css";
 import React from "react";
+import { About, Buttons, TeamMember } from "./index";
 import { Nav, Footer } from "../../Component";
-export function AskQuery() {
+
+export function Home() {
   return (
     <>
       <Nav />
-      <div>
-        <br></br>
-        <h1>Ask any Query </h1>
-      </div>
+      <About />
+      <Buttons />
+      <TeamMember />
       <Footer />
     </>
   );

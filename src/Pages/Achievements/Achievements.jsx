@@ -1,10 +1,12 @@
 import React from "react";
 import "../Achievements/Achievements.css";
 import trophy from "../../image/trophy.png";
+import { Nav, Footer } from "../../Component";
 
 export function Achievements() {
   return (
     <>
+      <Nav />
       <div className="outer-achievee">
         <div className="achieve-image"></div>
         <div className="trophy-img">
@@ -88,6 +90,7 @@ export function Achievements() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

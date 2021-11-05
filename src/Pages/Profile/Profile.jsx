@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Profile.css";
-
+import { Nav, Footer } from "../../Component";
 import { useNavigate } from "react-router-dom";
 export function Profile() {
   const [modal, setModal] = useState(false);
@@ -18,6 +18,7 @@ export function Profile() {
 
   return (
     <>
+      <Nav />
       <div className="profile-bg">
         <div className="profile-mainheading">
           <p className="profile-mainHeading">Profile</p>
@@ -111,6 +112,7 @@ export function Profile() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

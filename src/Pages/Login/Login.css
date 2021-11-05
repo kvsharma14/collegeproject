@@ -26,7 +26,7 @@
   flex-direction: column;
   box-sizing: border-box;
   border: 7px solid #20367e;
-  padding: 12px 60px 5px 60px;
+  padding: 60px 60px 60px 60px;
   border-radius: 8px;
   transition: all 250ms ease-in-out;
   cursor: pointer;

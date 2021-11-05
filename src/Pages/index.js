@@ -11,3 +11,4 @@ export { ViewDocument } from "./ViewDocument/ViewDocument";
 export { AskQuery } from "./AskQuery/AskQuery";
 export { Error404 } from "./Error404";
 export { Notification } from "./Notification/Notification";
+export { Home } from "./Home/Home";

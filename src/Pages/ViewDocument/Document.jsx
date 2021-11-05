@@ -2,7 +2,49 @@ export function Document() {
   return (
     <>
       <tr>
-        <td className="view-th-td td">Hellloo.java</td>
+        <td className="view-th-td td">Abstraction</td>
+        <td className="view-th-td td ">
+          <button className="list-btn">View</button>
+          <i className="fas fa-star view-star"></i>
+        </td>
+      </tr>
+      <tr>
+        <td className="view-th-td td">Layout</td>
+        <td className="view-th-td td ">
+          <button className="list-btn">View</button>
+          <i className="fas fa-star view-star"></i>
+        </td>
+      </tr>
+      <tr>
+        <td className="view-th-td td">SRS_SDS</td>
+        <td className="view-th-td td ">
+          <button className="list-btn">View</button>
+          <i className="fas fa-star view-star"></i>
+        </td>
+      </tr>
+      <tr>
+        <td className="view-th-td td">Work Breakdown Structure</td>
+        <td className="view-th-td td ">
+          <button className="list-btn">View</button>
+          <i className="fas fa-star view-star"></i>
+        </td>
+      </tr>
+      <tr>
+        <td className="view-th-td td">RACI Matrix</td>
+        <td className="view-th-td td ">
+          <button className="list-btn">View</button>
+          <i className="fas fa-star view-star"></i>
+        </td>
+      </tr>
+      <tr>
+        <td className="view-th-td td">Risks and Issues Log</td>
+        <td className="view-th-td td ">
+          <button className="list-btn">View</button>
+          <i className="fas fa-star view-star"></i>
+        </td>
+      </tr>
+      <tr>
+        <td className="view-th-td td">Project Charter</td>
         <td className="view-th-td td ">
           <button className="list-btn">View</button>
           <i className="fas fa-star view-star"></i>
@@ -11,43 +53,3 @@ export function Document() {
     </>
   );
 }
-
-// import React, { useContext } from "react";
-// import { CartContext } from "./Cart";
-
-// const Items = ({ id, description, title, img, price, quantity }) => {
-//   const { removeItem, increment, decrement } = useContext(CartContext);
-
-//   return (
-//     <>
-//       <div className="items-info">
-//         <div className="product-img">
-//           <img src={img} alt="iamge" />
-//         </div>
-
-//         <div className="title">
-//           <h2>{title}</h2>
-//           <p>{description}</p>
-//         </div>
-
-//         <div className="add-minus-quantity">
-//           <i className="fas fa-minus minus" onClick={() => decrement(id)}></i>
-//           <input type="text" placeholder={quantity} disabled />
-//           <i className="fas fa-plus add" onClick={() => increment(id)}></i>
-//         </div>
-
-//         <div className="price">
-//           <h3>{price}₹</h3>
-//         </div>
-
-//         <div className="remove-item">
-//           <i
-//             className="fas fa-trash-alt remove"
-//             onClick={() => removeItem(id)}></i>
-//         </div>
-//       </div>
-
-//       <hr />
-//     </>
-//   );
-// };

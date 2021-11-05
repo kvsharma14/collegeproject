@@ -13,7 +13,7 @@ export function Nav() {
 
         <ul className="nav-menu">
           <li>
-            <NavLink to="/">
+            <NavLink to="/index">
               <a href=" " className="nav-links">
                 Home
               </a>
@@ -79,11 +79,11 @@ export function Nav() {
             </div>
           </li>
 
-          <li>
+          {/* <li>
             <a href=" " className="nav-links">
               <i className="fas fa-bell" />
             </a>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </div>
