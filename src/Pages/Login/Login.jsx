@@ -29,7 +29,7 @@ export function Login() {
       dataDispatch({ type: "USER-LOGGED-IN", payload: data.success });
       console.log(data);
       openSuccessSnackbar("Successfully logged in", 2000);
-      navigate("/index");
+      navigate("/");
     } catch (e) {
       if (e.response.status === 401) {
         return openSnackbar("Wrong ID or Password.", 2000);

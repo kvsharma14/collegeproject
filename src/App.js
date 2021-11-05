@@ -24,7 +24,7 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="*" element={<Error404 />} />
-        <PrivateRoute path="/index" element={<Home />} />
+        <PrivateRoute path="/" element={<Home />} />
         <PrivateRoute path="/faq" element={<Accordian />} />
         <PrivateRoute path="/achievement" element={<Achievements />} />
         <PrivateRoute path="/bookmark" element={<Bookmark />} />
